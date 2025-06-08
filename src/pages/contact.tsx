@@ -520,7 +520,7 @@ export default function Contact() {
                   <span className="font-medium">@BundledAgency</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://t.me/Adelerivere"
                   className="flex items-center space-x-3 text-gray-300 hover:text-yellow-400 transition-colors duration-300 group"
                 >
                   <div className="p-3 bg-gray-800 rounded-full group-hover:bg-yellow-400/20 transition-colors duration-300">
