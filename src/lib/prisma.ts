@@ -1,21 +1,10 @@
-import { PrismaClient } from '@prisma/client'
+// Database functionality temporarily disabled
+const mockPrisma = {
+  user: {
+    findUnique: async () => null,
+    create: async () => ({ id: 'mock', email: 'mock@example.com', createdAt: new Date() }),
+    findFirst: async () => null,
+  }
+};
 
-// PrismaClient is attached to the `global` object in development to prevent
-// exhausting your database connection limit.
-//
-// Learn more: 
-// https://pris.ly/d/help/next-js-best-practices
-
-const prismaClientSingleton = () => {
-  return new PrismaClient()
-}
-
-declare const globalThis: {
-  prismaGlobal: ReturnType<typeof prismaClientSingleton>;
-} & typeof global;
-
-const prisma = globalThis.prismaGlobal ?? prismaClientSingleton()
-
-export default prisma
-
-if (process.env.VERCEL_ENV !== 'production') globalThis.prismaGlobal = prisma
+export default mockPrisma;
