@@ -4,8 +4,14 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  generateBuildId: () => 'build',
   images: {
     domains: ["assets.co.dev", "images.unsplash.com"],
+  },
+  experimental: {
+    outputFileTracingExcludes: {
+      '*': ['**\\.next\\**']
+    }
   },
   webpack: (config, context) => {
     config.optimization.minimize = process.env.NEXT_PUBLIC_CO_DEV_ENV !== "preview";

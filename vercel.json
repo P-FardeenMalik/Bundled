@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "next build",
-  "installCommand": "pnpm install",
   "framework": "nextjs",
+  "buildCommand": "rm -rf .next && next build",
+  "installCommand": "npm install",
   "outputDirectory": ".next",
   "github": {
     "enabled": true,
