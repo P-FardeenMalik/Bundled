@@ -221,7 +221,7 @@ const SignUpPage = () => {
 
           <div className="text-center mt-6">
             <p className="text-gray-400 text-xs">
-              © 2024 Bundled. All rights reserved.
+              © 2025 Bundled. All rights reserved.
             </p>
           </div>
         </div>

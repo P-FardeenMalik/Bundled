@@ -654,7 +654,7 @@ export default function Exchanges() {
                 </span>
               </Link>
               <div className="text-gray-400">
-                © 2024 Bundled. All rights reserved.
+                © 2025 Bundled. All rights reserved.
               </div>
             </div>
           </div>
