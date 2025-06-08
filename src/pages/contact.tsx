@@ -509,33 +509,39 @@ export default function Contact() {
               <p className="text-gray-300 mb-8 text-lg">
                 Follow us on social media for the latest updates and insights:
               </p>
-              <div className="flex justify-center gap-8">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="#"
-                  className="flex items-center space-x-3 text-gray-300 hover:text-yellow-400 transition-colors duration-300 group"
+                  className="flex items-center p-2 rounded-xl hover:bg-gray-800/50 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start"
                 >
-                  <div className="p-3 bg-gray-800 rounded-full group-hover:bg-yellow-400/20 transition-colors duration-300">
-                    <Twitter className="w-6 h-6" />
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-gray-800 rounded-lg">
+                      <Twitter className="w-5 h-5 text-gray-300" />
+                    </div>
+                    <span className="text-sm text-gray-300">@BundledAgency</span>
                   </div>
-                  <span className="font-medium">@BundledAgency</span>
                 </a>
                 <a
                   href="https://t.me/Adelerivere"
-                  className="flex items-center space-x-3 text-gray-300 hover:text-yellow-400 transition-colors duration-300 group"
+                  className="flex items-center p-2 rounded-xl hover:bg-gray-800/50 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start"
                 >
-                  <div className="p-3 bg-gray-800 rounded-full group-hover:bg-yellow-400/20 transition-colors duration-300">
-                    <MessageCircle className="w-6 h-6" />
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-gray-800 rounded-lg">
+                      <MessageCircle className="w-5 h-5 text-gray-300" />
+                    </div>
+                    <span className="text-sm text-gray-300">Telegram</span>
                   </div>
-                  <span className="font-medium">Telegram</span>
                 </a>
                 <a
                   href="#"
-                  className="flex items-center space-x-3 text-gray-300 hover:text-yellow-400 transition-colors duration-300 group"
+                  className="flex items-center p-2 rounded-xl hover:bg-gray-800/50 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start"
                 >
-                  <div className="p-3 bg-gray-800 rounded-full group-hover:bg-yellow-400/20 transition-colors duration-300">
-                    <Linkedin className="w-6 h-6" />
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-gray-800 rounded-lg">
+                      <Linkedin className="w-5 h-5 text-gray-300" />
+                    </div>
+                    <span className="text-sm text-gray-300">LinkedIn</span>
                   </div>
-                  <span className="font-medium">LinkedIn</span>
                 </a>
               </div>
             </motion.div>
