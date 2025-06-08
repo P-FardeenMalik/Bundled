@@ -1,13 +1,9 @@
 {
   "version": 2,
   "buildCommand": "next build",
-  "installCommand": "pnpm install --no-frozen-lockfile",
+  "installCommand": "pnpm install",
   "framework": "nextjs",
   "outputDirectory": ".next",
-  "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "https://xhfyanuuaufzaucfggur.supabase.co",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhoZnlhbnV1YXVmemF1Y2ZnZ3VyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg4NjM5NjIsImV4cCI6MjA2NDQzOTk2Mn0.38cZ5Df21vnkSXIolcCGThj5f0-Bn-HUXh-s_Z5cVtI"
-  },
   "github": {
     "enabled": true,
     "silent": true
