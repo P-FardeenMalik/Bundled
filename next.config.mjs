@@ -6,7 +6,16 @@ const nextConfig = {
   },
   generateBuildId: () => 'build',
   images: {
-    domains: ["assets.co.dev", "images.unsplash.com"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'assets.co.dev'
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com'
+      }
+    ]
   },
   experimental: {
     outputFileTracingExcludes: {

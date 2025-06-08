@@ -410,11 +410,9 @@ export default function Contact() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <Badge className="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 text-yellow-400 border-yellow-400/30 mb-6">
-                Our Offices
-              </Badge>
+              
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                Global <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Presence</span>
+                Global <span className="bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent">Presence</span>
               </h2>
             </motion.div>
 
@@ -466,11 +464,11 @@ export default function Contact() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              <Badge className="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 text-yellow-400 border-yellow-400/30 mb-6">
+              <h3 className="text-xl font-semibold text-gray-100 mb-6">
                 FAQ
-              </Badge>
+              </h3>
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                Frequently Asked <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Questions</span>
+                Frequently Asked <span className="bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent">Questions</span>
               </h2>
             </motion.div>
 

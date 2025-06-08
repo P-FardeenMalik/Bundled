@@ -1,9 +1,9 @@
-// Database functionality temporarily disabled
+// Mock client for development
 const mockPrisma = {
   user: {
-    findUnique: async () => null,
-    create: async () => ({ id: 'mock', email: 'mock@example.com', createdAt: new Date() }),
-    findFirst: async () => null,
+    findUnique: () => Promise.resolve(null),
+    create: () => Promise.resolve({ id: 'mock', email: 'mock@example.com' }),
+    findFirst: () => Promise.resolve(null)
   }
 };
 

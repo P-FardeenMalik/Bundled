@@ -1,8 +1,8 @@
 {
   "version": 2,
   "framework": "nextjs",
-  "buildCommand": "rm -rf .next && next build",
-  "installCommand": "npm install",
+  "buildCommand": "next build",
+  "installCommand": "pnpm install --no-frozen-lockfile --ignore-scripts",
   "outputDirectory": ".next",
   "github": {
     "enabled": true,
