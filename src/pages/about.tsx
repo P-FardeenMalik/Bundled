@@ -218,7 +218,7 @@ export default function About() {
               >
                 <div className="relative">
                   <Image
-                    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=500&fit=crop&crop=center"
+                    src="/images/home/home.jpg"
                     alt="Team collaboration"
                     width={600}
                     height={500}
