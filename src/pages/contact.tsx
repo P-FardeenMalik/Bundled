@@ -67,23 +67,23 @@ const contactMethods = [
 
 const offices = [
   {
-    city: "New York",
+    city: "Dubai",
     address: "123 Wall Street, Suite 456",
     zipcode: "New York, NY 10005",
     image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=300&fit=crop"
-  },
-  {
-    city: "London",
-    address: "45 Canary Wharf",
-    zipcode: "London E14 5AB, UK",
-    image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop"
-  },
-  {
-    city: "Singapore",
-    address: "1 Marina Bay Drive",
-    zipcode: "Singapore 018989",
-    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&h=300&fit=crop"
   }
+  // {
+  //   city: "London",
+  //   address: "45 Canary Wharf",
+  //   zipcode: "London E14 5AB, UK",
+  //   image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop"
+  // },
+  // {
+  //   city: "Singapore",
+  //   address: "1 Marina Bay Drive",
+  //   zipcode: "Singapore 018989",
+  //   image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&h=300&fit=crop"
+  // }
 ];
 
 const faqs = [
@@ -421,10 +421,10 @@ export default function Contact() {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="grid md:grid-cols-3 gap-8"
+              className="flex justify-center"
             >
               {offices.map((office, index) => (
-                <motion.div key={index} variants={fadeInUp}>
+                <motion.div key={index} variants={fadeInUp} className="w-full max-w-md">
                   <Card className="bg-gray-900/50 border-white/10 hover:border-yellow-400/30 transition-all duration-500 group backdrop-blur-sm overflow-hidden">
                     <div className="relative h-48">
                       <Image
