@@ -223,13 +223,15 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
             >
-              <Button 
-                size="lg" 
-                className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Schedule Strategy Call
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+              <Link href="https://calendly.com/fardeenmailk6262/30min" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg" 
+                  className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  Schedule Strategy Call
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
               <Button 
                 size="lg" 
                 variant="outline" 
@@ -585,7 +587,7 @@ export default function Home() {
                   <span className="font-medium text-sm sm:text-base break-all">@BundledAgency</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://t.me/Adelerivere"
                   className="flex items-center space-x-3 text-gray-300 hover:text-yellow-500 transition-colors duration-300 group justify-center sm:justify-start"
                 >
                   <div className="p-3 bg-yellow-500/10 rounded-full group-hover:bg-yellow-500/20 transition-colors duration-300">

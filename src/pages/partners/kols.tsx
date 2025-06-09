@@ -575,10 +575,12 @@ export default function KOLs() {
                 and build authentic community engagement.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
-                  Book KOL Campaign
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                <Link href="https://t.me/Adelerivere" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                    Book KOL Campaign
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
                 <Link href="/contact">
                   <Button size="lg" variant="outline" className="border-2 border-purple-400/60 text-purple-400 hover:bg-purple-400 hover:text-black bg-transparent px-8 py-4 rounded-full text-lg transition-all duration-300 group font-semibold">
                     Get Custom Quote
