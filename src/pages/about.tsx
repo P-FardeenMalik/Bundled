@@ -32,28 +32,39 @@ const staggerContainer = {
 
 const team = [
   {
-    name: "Alex Chen",
+    name: "Daniel Clarkson",
     role: "Founder & CEO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-    bio: "Former Goldman Sachs analyst with 8+ years in crypto. Led marketing for 3 unicorn blockchain projects."
+    image: "/images/team/Daniel Clarkson.jpg",
+    bio: "A seasoned entrepreneur and strategic visionary, Daniel Clarkson brings over a decade of experience in digital growth and market disruption. Known for launching scalable campaigns across tech, crypto, and lifestyle sectors, Daniel built “Bundled” to unite creativity with performance. His leadership drives the firm’s focus on data-backed innovation, elite client service, and global brand elevation."
   },
   {
-    name: "Sarah Williams",
-    role: "Head of Strategy",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-    bio: "Ex-Coinbase marketing director. Expert in regulatory compliance and institutional partnerships."
+    name: "Steve Hargrove",
+    role: "Chief Marketing Officer (CMO)",
+    image: "/images/team/Steve.jpg",
+    bio: "Steve Hargrove is a growth architect with a sharp eye for consumer behavior and emerging trends. With a background in both agency and in-house brand leadership, he’s scaled marketing operations for Fortune 500s and viral startups alike. At Bundled, Steve fuses storytelling with performance strategy to deliver campaigns that not only captivate—but convert."
   },
   {
-    name: "Michael Rodriguez",
-    role: "Creative Director",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    bio: "Award-winning designer from Apple. Specialized in Web3 brand identity and user experience."
+    name: "Ahmet Yalcin",
+    role: "Chief Creative Officer (CCO)",
+    image: "/images/team/Ahmet Yalcin.jpg",
+    bio: "Ahmet Yalcin is a multi-disciplinary creative force with a flair for visual storytelling, branding, and experiential campaigns. With roots in film and digital media, he oversees all creative direction at Bundled, ensuring each project is as stunning as it is strategic. Ahmet’s work has helped brands craft unforgettable identities across cultures and continents."
   },
   {
-    name: "Emily Zhang",
-    role: "Head of Partnerships",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-    bio: "Former Binance business development lead. Built relationships with 200+ VCs and exchanges."
+    name: "Adele Rivere",
+    role: "Co-founder & Head of Affiliate Strategy",
+    image: "/images/team/Adele Rivere.jpg",
+    bio: "With an instinct for growth partnerships and influencer ecosystems, Adele Rivere has helped scale affiliate networks for some of the world’s top brands. As co-founder of Bundled, she leads with a mix of sharp analytics and people-first collaboration. Her ability to forge high-performing alliances makes her a cornerstone of the agency’s outreach success."
+  },    {
+    name: "Eleanor Graves",
+    role: "Chief Media Officer (CMO)",
+    image: "/images/team/Eleanor.jpg",
+    bio: "Eleanor Graves is a digital strategist with expertise across paid media, viral content, and cross-platform campaigns. With years of experience managing seven-figure ad spends and delivering ROI-positive outcomes, Eleanor drives Bundled’s media buying and optimization efforts. Her tactical precision helps brands break through the noise."
+  },
+  {
+    name: "Aria Jae",
+    role: "Chief Financial Officer (CFO)",
+    image: "/images/team/Aria Jae.jpg",
+    bio: "Aria Jae is a finance strategist who blends analytical depth with startup agility. With a background in venture-backed growth firms, Aria ensures Bundled’s financial health, scalability, and operational efficiency. Her insight enables the team to make bold yet calculated decisions that drive both profit and impact."
   }
 ];
 
@@ -294,7 +305,7 @@ export default function About() {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {team.map((member, index) => (
                 <motion.div key={index} variants={fadeInUp}>
@@ -308,7 +319,6 @@ export default function About() {
                           height={120}
                           className="rounded-full mx-auto group-hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-500/20 mx-auto w-[120px] h-[120px]"></div>
                       </div>
                       <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
                         {member.name}
@@ -326,7 +336,7 @@ export default function About() {
         </section>
 
         {/* Timeline Section */}
-        <section className="py-32 px-6 lg:px-8 relative">
+        {/* <section className="py-32 px-6 lg:px-8 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/20 to-transparent"></div>
           
           <div className="max-w-7xl mx-auto relative z-10">
@@ -383,7 +393,7 @@ export default function About() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Footer */}
         <footer className="bg-gray-900/50 py-16 px-6 lg:px-8 border-t border-white/10">
