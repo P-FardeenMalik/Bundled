@@ -39,8 +39,8 @@ const contactMethods = [
     icon: <Mail className="w-8 h-8" />,
     title: "Email Us",
     description: "Get in touch via email for detailed inquiries",
-    contact: "hello@bundled.agency",
-    action: "mailto:hello@bundled.agency"
+    contact: "contact@bundled.finance",
+    action: "mailto:contact@bundled.finance"
   },
   {
     icon: <Phone className="w-8 h-8" />,
@@ -53,8 +53,8 @@ const contactMethods = [
     icon: <MessageCircle className="w-8 h-8" />,
     title: "Live Chat",
     description: "Chat with us on Telegram",
-    contact: "@BundledSupport",
-    action: "https://t.me/BundledSupport"
+    contact: "@Mrdaniel91",
+    action: "https://t.me/Mrdaniel91"
   },
   {
     icon: <Clock className="w-8 h-8" />,
@@ -68,9 +68,9 @@ const contactMethods = [
 const offices = [
   {
     city: "Dubai",
-    address: "123 Wall Street, Suite 456",
+    address: "103, Al Lu'lu Street Jumeirah, Dubai",
     zipcode: "New York, NY 10005",
-    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&h=300&fit=crop"
+    image: "/images/contact/dubai.jpg"
   }
   // {
   //   city: "London",
@@ -126,7 +126,21 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission here
+    
+    // Create email content
+    const subject = `New Contact Form Submission from ${formData.name}`;
+    const body = `
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company}
+Project Type: ${formData.project}
+Budget Range: ${formData.budget}
+Timeline: ${formData.timeline}
+Message: ${formData.message}
+    `.trim();
+
+    // Open email client with form data
+    window.location.href = `mailto:contact@bundled.finance?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -433,7 +447,6 @@ export default function Contact() {
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     </div>
                     <CardContent className="p-6">
                       <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
