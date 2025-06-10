@@ -12,7 +12,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleGetStartedClick = () => {
-    router.push('/signup');
+    window.open('https://t.me/bundledhq', '_blank');
   };
 
 

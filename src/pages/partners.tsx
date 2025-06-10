@@ -109,7 +109,7 @@ export default function Partners() {
                 <Link href="/about" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
                 <Link href="/#testimonials" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Clients</Link>
                 <Link href="/#contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
-                <Link href="/signup">
+                <Link href="https://t.me/bundledhq">
                   <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25">
                     Get Started
                   </Button>
@@ -303,7 +303,7 @@ export default function Partners() {
                 to accelerate your growth and reach new heights.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Link href="/signup">
+                <Link href="https://calendly.com/getbundled/30min">
                   <Button 
                     size="lg" 
                     className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"

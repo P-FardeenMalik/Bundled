@@ -15,13 +15,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com'
       }
-    ]
+    ],
+    unoptimized: true
   },
-  experimental: {
-    outputFileTracingExcludes: {
-      '*': ['**\\.next\\**']
-    }
-  },
+  output: 'standalone',
   webpack: (config, context) => {
     config.optimization.minimize = process.env.NEXT_PUBLIC_CO_DEV_ENV !== "preview";
     return config;

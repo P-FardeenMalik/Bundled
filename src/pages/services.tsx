@@ -472,7 +472,7 @@ export default function Services() {
                 <Link href="/about" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
                 <Link href="/#testimonials" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Clients</Link>
                 <Link href="/#contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
-                <Link href="/signup">
+                <Link href="https://t.me/bundledhq">
                   <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25">
                     Get Started
                   </Button>
@@ -762,7 +762,7 @@ export default function Services() {
                 Choose the perfect package for your project and let our expert team drive your success with guaranteed results.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <Link href="/signup">
+                <Link href="https://calendly.com/getbundled/30min">
                   <Button 
                     size="lg" 
                     className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
@@ -770,11 +770,11 @@ export default function Services() {
                     Get Started Now
                   </Button>
                 </Link>
-                <Link href="/#contact">
+                {/* <Link href="/#contact">
                   <Button size="lg" variant="outline" className="border-2 border-yellow-400/60 text-yellow-400 hover:bg-yellow-400 hover:text-black bg-transparent px-8 py-4 rounded-full text-lg transition-all duration-300 group font-semibold">
                     Get Custom Quote
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
           </div>

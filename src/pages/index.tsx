@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +21,7 @@ import {
   CheckCircle,
   Twitter,
   MessageCircle,
-  Linkedin,
+  Instagram,
   Play,
   Globe,
   Target,
@@ -137,8 +137,8 @@ const stats = [
   { value: "98%", label: "Success Rate", icon: <Award className="w-6 h-6" /> }
 ];
 
-export default function Home() {
-  const [scrollY, setScrollY] = useState(0);
+const Home: React.FC = () => {
+  const [scrollY, setScrollY] = React.useState(0);
   const { scrollYProgress } = useScroll();
   
   const heroY = useTransform(scrollYProgress, [0, 1], [0, -100]);
@@ -164,9 +164,46 @@ export default function Home() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{type: 'success' | 'error', message: string} | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully.',
+        });
+        setFormData({
+          name: '',
+          email: '',
+          project: '',
+          message: '',
+        });
+      } else {
+        const error = await response.json();
+        throw new Error(error.message || 'Something went wrong');
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to send message. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -223,7 +260,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
             >
-              <Link href="https://calendly.com/fardeenmailk6262/30min" target="_blank" rel="noopener noreferrer">
+              <Link href="https://calendly.com/getbundled/30min" target="_blank" rel="noopener noreferrer">
                 <Button 
                   size="lg" 
                   className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
@@ -232,14 +269,14 @@ export default function Home() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Button 
+              {/* <Button 
                 size="lg" 
                 variant="outline" 
                 className="border border-yellow-500/20 text-yellow-500 hover:bg-yellow-500/10 bg-transparent px-8 py-4 rounded-full text-lg transition-all duration-300 group font-medium"
               >
                 <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
                 View Case Studies
-              </Button>
+              </Button> */}
             </motion.div>
 
             {/* Stats */}
@@ -552,12 +589,18 @@ export default function Home() {
                         required
                       />
                     </div>
+                    {submitStatus && (
+                      <div className={`text-sm ${submitStatus.type === 'success' ? 'text-green-400' : 'text-red-400'} mb-4`}>
+                        {submitStatus.message}
+                      </div>
+                    )}
                     <Button
                       type="submit"
                       size="lg"
-                      className="w-full bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium h-14 rounded-xl text-lg transition-all duration-300 transform hover:scale-105"
+                      disabled={isSubmitting}
+                      className="w-full bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium h-14 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </form>
@@ -578,13 +621,13 @@ export default function Home() {
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8">
                 <a
-                  href="#"
+                  href="https://x.com/bundledhq"
                   className="flex items-center space-x-3 text-gray-300 hover:text-yellow-500 transition-colors duration-300 group justify-center sm:justify-start"
                 >
                   <div className="p-3 bg-yellow-500/10 rounded-full group-hover:bg-yellow-500/20 transition-colors duration-300">
                     <Twitter className="w-5 h-5" />
                   </div>
-                  <span className="font-medium text-sm sm:text-base break-all">@BundledAgency</span>
+                  <span className="font-medium text-sm sm:text-base break-all">@Bundledhq</span>
                 </a>
                 <a
                   href="https://t.me/Adelerivere"
@@ -596,13 +639,13 @@ export default function Home() {
                   <span className="font-medium text-sm sm:text-base">Telegram</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/bundledhq"
                   className="flex items-center space-x-3 text-gray-300 hover:text-yellow-500 transition-colors duration-300 group justify-center sm:justify-start"
                 >
                   <div className="p-3 bg-yellow-500/10 rounded-full group-hover:bg-yellow-500/20 transition-colors duration-300">
-                    <Linkedin className="w-5 h-5" />
+                    <Instagram className="w-5 h-5" />
                   </div>
-                  <span className="font-medium text-sm sm:text-base">LinkedIn</span>
+                  <span className="font-medium text-sm sm:text-base">Instagram</span>
                 </a>
               </div>
             </motion.div>
@@ -638,3 +681,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

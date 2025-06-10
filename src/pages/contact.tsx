@@ -16,7 +16,7 @@ import {
   ArrowRight,
   Twitter,
   MessageCircle,
-  Linkedin,
+  Instagram,
   Send
 } from "lucide-react";
 
@@ -67,23 +67,11 @@ const contactMethods = [
 
 const offices = [
   {
-    city: "Dubai",
-    address: "103, Al Lu'lu Street Jumeirah, Dubai",
-    zipcode: "New York, NY 10005",
-    image: "/images/contact/dubai.jpg"
+    city: "Canada",
+    address: "3900 Grant Ave, Winnipeg, MB R3R 3C5",
+    // zipcode: "New York, NY 10005",
+    image: "/images/contact/canada.jpg"
   }
-  // {
-  //   city: "London",
-  //   address: "45 Canary Wharf",
-  //   zipcode: "London E14 5AB, UK",
-  //   image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop"
-  // },
-  // {
-  //   city: "Singapore",
-  //   address: "1 Marina Bay Drive",
-  //   zipcode: "Singapore 018989",
-  //   image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400&h=300&fit=crop"
-  // }
 ];
 
 const faqs = [
@@ -188,6 +176,7 @@ Message: ${formData.message}
             <Button 
               size="lg" 
               className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+              onClick={() => window.open('https://t.me/Mrdaniel91', '_blank')}
             >
               Contact Us Now
             </Button>
@@ -456,7 +445,7 @@ Message: ${formData.message}
                         <MapPin className="w-5 h-5 text-yellow-400 mt-1 flex-shrink-0" />
                         <div>
                           <p>{office.address}</p>
-                          <p>{office.zipcode}</p>
+                          {/* <p>{office.zipcode}</p> */}
                         </div>
                       </div>
                     </CardContent>
@@ -524,14 +513,14 @@ Message: ${formData.message}
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="#"
+                  href="https://x.com/bundledhq"
                   className="flex items-center p-2 rounded-xl hover:bg-gray-800/50 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start"
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-gray-800 rounded-lg">
                       <Twitter className="w-5 h-5 text-gray-300" />
                     </div>
-                    <span className="text-sm text-gray-300">@BundledAgency</span>
+                    <span className="text-sm text-gray-300">@Bundledhq</span>
                   </div>
                 </a>
                 <a
@@ -546,14 +535,14 @@ Message: ${formData.message}
                   </div>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/bundledhq"
                   className="flex items-center p-2 rounded-xl hover:bg-gray-800/50 transition-all duration-300 w-full sm:w-auto justify-center sm:justify-start"
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-gray-800 rounded-lg">
-                      <Linkedin className="w-5 h-5 text-gray-300" />
+                      <Instagram className="w-5 h-5 text-gray-300" />
                     </div>
-                    <span className="text-sm text-gray-300">LinkedIn</span>
+                    <span className="text-sm text-gray-300">Instagram</span>
                   </div>
                 </a>
               </div>
@@ -568,7 +557,7 @@ Message: ${formData.message}
               <div className="flex items-center space-x-3 mb-6 md:mb-0">
                 <div className="relative">
                   <Image
-                    src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                    src="/images/logo.jpg"
                     alt="Bundled Logo"
                     width={40}
                     height={40}

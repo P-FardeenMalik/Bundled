@@ -231,53 +231,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* Values Section */}
-        <section className="py-32 px-6 lg:px-8 relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/20 to-transparent"></div>
-          
-          <div className="max-w-7xl mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-20"
-            >
-              <Badge className="bg-transparent text-yellow-400 border-none mb-6">
-                Our Values
-              </Badge>
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                What Drives <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Our Success</span>
-              </h2>
-            </motion.div>
-
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
-            >
-              {values.map((value, index) => (
-                <motion.div key={index} variants={fadeInUp}>
-                  <Card className="bg-gray-900/50 border-white/10 hover:border-yellow-400/30 transition-all duration-500 h-full group backdrop-blur-sm">
-                    <CardContent className="p-8 text-center">
-                      <div className="p-4 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-2xl text-yellow-400 inline-flex mb-6 group-hover:scale-110 transition-transform duration-300">
-                        {value.icon}
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
-                        {value.title}
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        {value.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
 
         {/* Team Section */}
         <section className="py-32 px-6 lg:px-8">
@@ -334,6 +287,56 @@ export default function About() {
             </motion.div>
           </div>
         </section>
+
+        {/* Values Section */}
+        <section className="py-32 px-6 lg:px-8 relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/20 to-transparent"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <Badge className="bg-transparent text-yellow-400 border-none mb-6">
+                Our Values
+              </Badge>
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
+                What Drives <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Our Success</span>
+              </h2>
+            </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            >
+              {values.map((value, index) => (
+                <motion.div key={index} variants={fadeInUp}>
+                  <Card className="bg-gray-900/50 border-white/10 hover:border-yellow-400/30 transition-all duration-500 h-full group backdrop-blur-sm">
+                    <CardContent className="p-8 text-center">
+                      <div className="p-4 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-2xl text-yellow-400 inline-flex mb-6 group-hover:scale-110 transition-transform duration-300">
+                        {value.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
+                        {value.title}
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        {value.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        
 
         {/* Timeline Section */}
         {/* <section className="py-32 px-6 lg:px-8 relative">
