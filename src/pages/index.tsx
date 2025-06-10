@@ -26,7 +26,8 @@ import {
   Globe,
   Target,
   Rocket,
-  Award
+  Award,
+  ExternalLink
 } from "lucide-react";
 
 const fadeInUp = {
@@ -110,7 +111,7 @@ const projects = [
       "500% increase in community growth",
       "Successfully listed on 3 Tier-1 exchanges"
     ],
-    metrics: "82 ETH Raised • 3 Tier-1 Listings"
+    verificationLink: "https://www.pinksale.finance/launchpad/ethereum/0xA4CccB4f49A2a71b18c925c18c5ca3871b195870"
   },
   {
     name: "Zeny",
@@ -121,7 +122,7 @@ const projects = [
       "20,000+ active community members",
       "Featured on major crypto news outlets"
     ],
-    metrics: "$100k USDT Raised • 20k+ Members"
+    verificationLink: "https://www.pinksale.finance/launchpad/polygon/0xc282Ba37690E49D3626162bef99cE01837C512DB"
   },
   {
     name: "ICED",
@@ -132,7 +133,7 @@ const projects = [
       "Partnership with 5 major NFT collections",
       "Integration with top NFT platforms"
     ],
-    metrics: "850 SOL Raised • 5 Major Partners"
+    verificationLink: "https://www.pinksale.finance/solana/launchpad/BsnhqssMc53XkDDdNU7PVP1nQoS4cH2pufHzTjbMC6PE"
   }
 ];
 
@@ -505,11 +506,15 @@ const Home: React.FC = () => {
                           </div>
                         ))}
                       </div>
-                      <div className="pt-4 border-t border-white/10">
-                        <div className="text-xs text-yellow-400 font-medium bg-gradient-to-r from-yellow-400/10 to-orange-500/10 px-3 py-2 rounded-lg">
-                          {project.metrics}
-                        </div>
-                      </div>
+                      <a
+                        href={project.verificationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm text-yellow-400 hover:text-yellow-300 transition-colors duration-300"
+                      >
+                        Verify on Explorer
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </a>
                     </CardContent>
                   </Card>
                 </motion.div>
