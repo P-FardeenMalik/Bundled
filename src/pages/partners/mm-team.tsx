@@ -305,7 +305,7 @@ export default function MMTeam() {
                 <Link href="/services" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Services</Link>
                 <Link href="/partners" className="text-yellow-400 font-medium">Partners</Link>
                 <Link href="/about" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
-                <Link href="/clients" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Clients</Link>
+                <Link href="/Projects" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
                 <Link href="/contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
                 <Link href="https://t.me/bundledhq">
                   <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25">
@@ -339,7 +339,7 @@ export default function MMTeam() {
                 <Link href="/services" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Services</Link>
                 <Link href="/partners" className="block text-yellow-400 font-medium">Partners</Link>
                 <Link href="/about" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
-                <Link href="/clients" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Clients</Link>
+                <Link href="/Projects" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
                 <Link href="/contact" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
                 <Link href="/signup">
                   <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold rounded-full shadow-lg">

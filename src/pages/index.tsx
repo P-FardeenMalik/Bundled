@@ -100,33 +100,39 @@ const services = [
   }
 ];
 
-const testimonials = [
+const projects = [
   {
-    name: "Alexandra Chen",
-    role: "Founder & CEO",
-    company: "Nexus DeFi Protocol",
-    content: "Bundled's strategic approach was instrumental in our $12M Series A. Their KOL network delivered 2.5M impressions and helped us secure listings on 3 Tier-1 exchanges. The ROI was exceptional - 450% increase in qualified leads within 60 days.",
-    rating: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    metrics: "$12M Raised • 3 Exchange Listings"
+    name: "Simple AI",
+    description: "Decentralized AI infrastructure provider revolutionizing machine learning accessibility.",
+    image: "/images/projects/simple-ai.jpg",
+    achievements: [
+      "82 ETH raised in presale",
+      "500% increase in community growth",
+      "Successfully listed on 3 Tier-1 exchanges"
+    ],
+    metrics: "82 ETH Raised • 3 Tier-1 Listings"
   },
   {
-    name: "Sarah Williams",
-    role: "Chief Marketing Officer",
-    company: "Quantum NFT Marketplace",
-    content: "Working with Bundled transformed our go-to-market strategy. Their compliance expertise ensured we launched in 8 jurisdictions without issues, while their influencer campaigns generated $2.8M in trading volume in our first month.",
-    rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-    metrics: "$2.8M Trading Volume • 8 Jurisdictions"
+    name: "Zeny",
+    description: "Next-generation DeFi protocol focused on yield optimization and risk management.",
+    image: "/images/projects/zeny.png",
+    achievements: [
+      "$100k USDT raised",
+      "20,000+ active community members",
+      "Featured on major crypto news outlets"
+    ],
+    metrics: "$100k USDT Raised • 20k+ Members"
   },
   {
-    name: "Michael Rodriguez",
-    role: "Co-Founder",
-    company: "Apex Gaming DAO",
-    content: "Bundled's community building expertise is unmatched. They grew our Discord from 500 to 75K members and helped us achieve a successful $8M token launch with 98% community approval. Their strategic guidance was invaluable.",
-    rating: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    metrics: "75K Community • $8M Token Launch"
+    name: "ICED",
+    description: "Revolutionary NFT marketplace with unique staking mechanics and rewards system.",
+    image: "/images/projects/iced.png",
+    achievements: [
+      "850 SOL raised in IDO",
+      "Partnership with 5 major NFT collections",
+      "Integration with top NFT platforms"
+    ],
+    metrics: "850 SOL Raised • 5 Major Partners"
   }
 ];
 
@@ -458,8 +464,11 @@ const Home: React.FC = () => {
             >
 
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                Trusted by <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Leading</span> Crypto Projects
+                Featured <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">Projects</span>
               </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover some of our most successful project launches and milestone achievements
+              </p>
             </motion.div>
 
             <motion.div
@@ -469,34 +478,36 @@ const Home: React.FC = () => {
               viewport={{ once: true }}
               className="grid md:grid-cols-3 gap-8"
             >
-              {testimonials.map((testimonial, index) => (
+              {projects.map((project, index) => (
                 <motion.div key={index} variants={scaleIn}>
                   <Card className="bg-gray-900/30 border-white/10 hover:border-yellow-400/30 transition-all duration-500 h-full backdrop-blur-sm group">
                     <CardContent className="p-8">
-                      <div className="flex mb-6">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+                        <Image
+                          src={project.image}
+                          alt={project.name}
+                          layout="fill"
+                          objectFit="cover"
+                          className="group-hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                        {project.name}
+                      </h3>
+                      <p className="text-gray-400 mb-6">
+                        {project.description}
+                      </p>
+                      <div className="space-y-3 mb-6">
+                        {project.achievements.map((achievement, idx) => (
+                          <div key={idx} className="flex items-center text-sm">
+                            <CheckCircle className="w-4 h-4 text-yellow-400 mr-3 flex-shrink-0" />
+                            <span className="text-gray-300">{achievement}</span>
+                          </div>
                         ))}
                       </div>
-                      <p className="text-gray-300 mb-8 italic text-lg leading-relaxed">
-                        "{testimonial.content}"
-                      </p>
-                      <div className="flex items-center space-x-4 mb-4">
-                        <Image
-                          src={testimonial.avatar}
-                          alt={testimonial.name}
-                          width={60}
-                          height={60}
-                          className="rounded-full"
-                        />
-                        <div>
-                          <div className="font-semibold text-white text-lg">{testimonial.name}</div>
-                          <div className="text-gray-400">{testimonial.role}, {testimonial.company}</div>
-                        </div>
-                      </div>
                       <div className="pt-4 border-t border-white/10">
-                        <div className="text-xs text-green-400 font-medium bg-gradient-to-r from-green-400/10 to-emerald-500/10 px-3 py-2 rounded-lg">
-                          {testimonial.metrics}
+                        <div className="text-xs text-yellow-400 font-medium bg-gradient-to-r from-yellow-400/10 to-orange-500/10 px-3 py-2 rounded-lg">
+                          {project.metrics}
                         </div>
                       </div>
                     </CardContent>

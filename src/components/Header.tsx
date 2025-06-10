@@ -53,8 +53,8 @@ const Header = () => {
             <Link href="/about" className={`text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/about' ? 'text-yellow-500' : ''}`}>
               About
             </Link>
-            <Link href="/clients" className={`text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/clients' ? 'text-yellow-500' : ''}`}>
-              Clients
+            <Link href="/projects" className={`text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/projects' ? 'text-yellow-500' : ''}`}>
+              Projects
             </Link>
             <Link href="/contact" className={`text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/contact' ? 'text-yellow-500' : ''}`}>
               Contact
@@ -96,8 +96,8 @@ const Header = () => {
             <Link href="/about" className={`block text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/about' ? 'text-yellow-500' : ''}`}>
               About
             </Link>
-            <Link href="/clients" className={`block text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/clients' ? 'text-yellow-500' : ''}`}>
-              Clients
+            <Link href="/projects" className={`block text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/projects' ? 'text-yellow-500' : ''}`}>
+              Projects
             </Link>
             <Link href="/contact" className={`block text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/contact' ? 'text-yellow-500' : ''}`}>
               Contact
