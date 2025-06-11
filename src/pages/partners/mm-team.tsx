@@ -282,17 +282,13 @@ export default function MMTeam() {
                 transition={{ duration: 0.6 }}
                 className="flex items-center space-x-3"
               >
-                <Link href="/" className="flex items-center space-x-3">
-                  <div className="relative">
-                    <Image
+                <Link href="/" className="flex items-center space-x-3">                    <Image
                       src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
                       alt="Bundled Logo"
                       width={48}
                       height={48}
                       className="rounded-xl"
                     />
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400/20 to-orange-500/20"></div>
-                  </div>
                   <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                     Bundled
                   </span>
@@ -564,16 +560,13 @@ export default function MMTeam() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <Link href="/" className="flex items-center space-x-3 mb-6 md:mb-0">
-                <div className="relative">
-                  <Image
-                    src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
-                    alt="Bundled Logo"
-                    width={40}
-                    height={40}
-                    className="rounded-xl"
-                  />
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400/20 to-orange-500/20"></div>
-                </div>
+                <Image
+                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                  alt="Bundled Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-xl"
+                />
                 <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                   Bundled
                 </span>

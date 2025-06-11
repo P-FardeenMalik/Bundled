@@ -403,16 +403,13 @@ export default function About() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center space-x-3 mb-6 md:mb-0">
-                <div className="relative">
-                  <Image
-                    src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
-                    alt="Bundled Logo"
-                    width={40}
-                    height={40}
-                    className="rounded-xl"
-                  />
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400/20 to-orange-500/20"></div>
-                </div>
+                <Image
+                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                  alt="Bundled Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-xl"
+                />
                 <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                   Bundled
                 </span>

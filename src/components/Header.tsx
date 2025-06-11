@@ -22,17 +22,13 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="cursor-pointer" onClick={() => router.push("/")}>
-            <div className="flex items-center space-x-3">
-              <div className="relative">
-                <Image
+            <div className="flex items-center space-x-3">                <Image
                   src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
                   alt="Bundled Logo"
                   width={48}
                   height={48}
                   className="rounded-xl"
                 />
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-500/20 to-yellow-700/20"></div>
-              </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent">
                 Bundled
               </span>

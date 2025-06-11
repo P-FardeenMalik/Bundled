@@ -555,16 +555,13 @@ Message: ${formData.message}
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center space-x-3 mb-6 md:mb-0">
-                <div className="relative">
-                  <Image
-                    src="/images/logo.jpg"
-                    alt="Bundled Logo"
-                    width={40}
-                    height={40}
-                    className="rounded-xl"
-                  />
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400/20 to-orange-500/20"></div>
-                </div>
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Bundled Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-xl"
+                />
                 <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                   Bundled
                 </span>

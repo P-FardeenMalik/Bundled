@@ -163,16 +163,13 @@ export default function DashboardLayout({ children, title }: DashboardLayoutProp
         <div className="flex flex-col flex-grow bg-gray-900 border-r border-white/10">
           <div className="flex items-center h-16 px-6 border-b border-white/10">
             <div className="flex items-center space-x-3">
-              <div className="relative">
-                <Image
-                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
-                  alt="Bundled Logo"
-                  width={32}
-                  height={32}
-                  className="rounded-lg"
-                />
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-yellow-400/20 to-orange-500/20"></div>
-              </div>
+              <Image
+                src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                alt="Bundled Logo"
+                width={32}
+                height={32}
+                className="rounded-lg"
+              />
               <span className="text-lg font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                 Bundled
               </span>

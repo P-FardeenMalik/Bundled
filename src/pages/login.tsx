@@ -86,16 +86,13 @@ const LoginPage = () => {
           {/* Company Branding */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center space-x-3 mb-4 cursor-pointer" onClick={() => router.push("/")}>
-              <div className="relative">
-                <Image
-                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
-                  alt="Bundled Logo"
-                  width={48}
-                  height={48}
-                  className="rounded-xl"
-                />
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400/20 to-orange-500/20"></div>
-              </div>
+              <Image
+                src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                alt="Bundled Logo"
+                width={48}
+                height={48}
+                className="rounded-xl"
+              />
               <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                 Bundled
               </span>
