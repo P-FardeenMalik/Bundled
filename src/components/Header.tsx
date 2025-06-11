@@ -106,13 +106,7 @@ const Header = () => {
               <MessageCircle className="w-5 h-5" />
               Join Telegram
             </Button>
-            
-            <Button 
-              onClick={handleGetStartedClick}
-              className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold rounded-full shadow-lg hover:shadow-yellow-400/25"
-            >
-              Get Started
-            </Button>
+
           </div>
         </div>
       )}
