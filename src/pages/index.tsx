@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -276,14 +277,7 @@ const Home: React.FC = () => {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              {/* <Button 
-                size="lg" 
-                variant="outline" 
-                className="border border-yellow-500/20 text-yellow-500 hover:bg-yellow-500/10 bg-transparent px-8 py-4 rounded-full text-lg transition-all duration-300 group font-medium"
-              >
-                <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                View Case Studies
-              </Button> */}
+
             </motion.div>
 
             {/* Stats */}
@@ -382,15 +376,14 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
                 className="relative"
-              >
-                <div className="relative">
-                  <Image
-                    src="/images/home/home.jpg"
-                    alt="Team collaboration"
-                    width={600}
-                    height={500}
-                    className="rounded-3xl"
-                  />
+              >                <div className="relative">                <OptimizedImage
+                  src="/images/home/home.jpg"
+                  alt="Team collaboration"
+                  width={600}
+                  height={500}
+                  className="rounded-3xl"
+                  priority
+                />
                   <div className="absolute inset-0 bg-gradient-to-tr from-yellow-500/20 to-transparent rounded-3xl"></div>
                   <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center">
                     <div className="text-center">
@@ -482,13 +475,12 @@ const Home: React.FC = () => {
               {projects.map((project, index) => (
                 <motion.div key={index} variants={scaleIn}>
                   <Card className="bg-gray-900/30 border-white/10 hover:border-yellow-400/30 transition-all duration-500 h-full backdrop-blur-sm group">
-                    <CardContent className="p-8">
-                      <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+                    <CardContent className="p-8">                      <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
                         <Image
                           src={project.image}
                           alt={project.name}
-                          layout="fill"
-                          objectFit="cover"
+                          fill
+                          style={{ objectFit: "cover" }}
                           className="group-hover:scale-110 transition-transform duration-500"
                         />
                       </div>
@@ -671,10 +663,8 @@ const Home: React.FC = () => {
         {/* Footer */}
         <footer className="bg-gray-900/50 py-16 px-6 lg:px-8 border-t border-white/10">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex items-center space-x-3 mb-6 md:mb-0">
-                <Image
-                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+            <div className="flex flex-col md:flex-row justify-between items-center">              <div className="flex items-center space-x-3 mb-6 md:mb-0">                <OptimizedImage
+                  src="/images/logo.jpg"
                   alt="Bundled Logo"
                   width={40}
                   height={40}

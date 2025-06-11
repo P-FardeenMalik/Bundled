@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Image from 'next/image';
+import OptimizedImage from './OptimizedImage';
 import { AuthContext } from '@/contexts/AuthContext';
 import Logo from '@/components/Logo';
 import { Button } from "@/components/ui/button";
@@ -21,13 +21,13 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="cursor-pointer" onClick={() => router.push("/")}>
-            <div className="flex items-center space-x-3">                <Image
-                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+          <div className="cursor-pointer" onClick={() => router.push("/")}>            <div className="flex items-center space-x-3">                <OptimizedImage
+                  src="/images/logo.jpg"
                   alt="Bundled Logo"
                   width={48}
                   height={48}
                   className="rounded-xl"
+                  priority
                 />
               <span className="text-2xl font-bold bg-gradient-to-r from-yellow-500 to-yellow-700 bg-clip-text text-transparent">
                 Bundled

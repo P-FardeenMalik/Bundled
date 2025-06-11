@@ -115,7 +115,7 @@ export default function DashboardLayout({ children, title }: DashboardLayoutProp
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <Image
-                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                  src="/images/logo.jpg"
                   alt="Bundled Logo"
                   width={32}
                   height={32}
@@ -164,7 +164,7 @@ export default function DashboardLayout({ children, title }: DashboardLayoutProp
           <div className="flex items-center h-16 px-6 border-b border-white/10">
             <div className="flex items-center space-x-3">
               <Image
-                src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                src="/images/logo.jpg"
                 alt="Bundled Logo"
                 width={32}
                 height={32}

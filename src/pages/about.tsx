@@ -404,7 +404,7 @@ export default function About() {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center space-x-3 mb-6 md:mb-0">
                 <Image
-                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                  src="/images/logo.jpg"
                   alt="Bundled Logo"
                   width={40}
                   height={40}

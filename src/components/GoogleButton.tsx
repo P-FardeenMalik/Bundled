@@ -40,10 +40,9 @@ const GoogleButton = () => {
             <TooltipTrigger asChild>
               {button}
             </TooltipTrigger>
-            <TooltipContent>
-              <div>
+            <TooltipContent>              <div>
                 <p>Google Sign In is only available in the browser, not within developer mode. Click <button onClick={handleOpenNewTab} className="text-blue-500 hover:underline">here</button> to open in a new tab.</p>
-                <p>Make sure Google Sign In is configured in your Supabase project settings.</p>
+                <p>Make sure Google Sign In is properly configured in your project settings.</p>
               </div>
             </TooltipContent>
           </Tooltip>

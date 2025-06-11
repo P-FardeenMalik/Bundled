@@ -6,24 +6,17 @@ import { Toaster } from "@/components/ui/toaster"
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-export default function App({ Component, pageProps }: AppProps) {
-  const [mounted, setMounted] = useState(false);
+export default function App({ Component, pageProps }: AppProps) {  const [mounted, setMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    const root = document.documentElement;
-    const computedStyle = getComputedStyle(root);
-    const colorScheme = computedStyle.getPropertyValue('--mode').trim().replace(/"/g, '');
-    if (colorScheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.add('light');
-    }
     setMounted(true);
+    const root = document.documentElement;
+    root.classList.add('dark'); // Set default theme
   }, []);
 
-  // Prevent flash while theme loads
   if (!mounted) {
-    return null;
+    return <div style={{ visibility: 'hidden' }}><Component {...pageProps} /></div>;
   }
 
   return (

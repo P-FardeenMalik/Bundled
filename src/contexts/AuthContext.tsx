@@ -1,12 +1,14 @@
-import React, { createContext, useState, ReactNode, useContext, useEffect } from 'react';
-import { createClient } from '@/util/supabase/component';
-import { User, Provider } from '@supabase/supabase-js';
+import React, { createContext, useState, ReactNode, useContext } from 'react';
 import { useToast } from "@/components/ui/use-toast";
 import { useRouter } from 'next/router';
 
+interface User {
+  id: string;
+  email: string | null;
+}
+
 interface AuthContextType {
   user: User | null;
-  createUser: (user: User) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string) => Promise<void>;
   signInWithMagicLink: (email: string) => Promise<void>;
@@ -18,7 +20,6 @@ interface AuthContextType {
 
 export const AuthContext = createContext<AuthContextType>({
   user: null,
-  createUser: async () => {},
   signIn: async () => {},
   signUp: async () => {},
   signInWithMagicLink: async () => {},
@@ -31,200 +32,73 @@ export const AuthContext = createContext<AuthContextType>({
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
-  const [initializing, setInitializing] = useState(true);
-  const supabase = createClient();
+  const [initializing] = useState(false);
   const { toast } = useToast();
 
-  React.useEffect(() => {
-    const fetchSession = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      setUser(user);
-      setInitializing(false);
-    };
-
-    fetchSession();
-
-    const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
-      // The setTimeout is necessary to allow Supabase functions to trigger inside onAuthStateChange
-      setTimeout(async () => {
-        setUser(session?.user ?? null);
-        setInitializing(false);
-      }, 0);
-    });
-
-    return () => {
-      authListener.subscription.unsubscribe();
-    };
-  }, []);
-
-  const createUser = async (user: User) => {
-    try {
-      const { data, error } = await supabase
-        .from('User')
-        .select('id')
-        .eq('id', user.id)
-        .maybeSingle();
-      if (error && error.code !== 'PGRST116') {
-        throw error;
-      }
-      if (!data) {
-        const { error: insertError } = await supabase
-          .from('User')
-          .insert({
-            id: user.id,
-            email: user.email,
-          });
-        if (insertError) {
-          throw insertError;
-        }
-      }
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to create user profile",
-      });
-    }
-  };
-
   const signIn = async (email: string, password: string) => {
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-    if (!error && data.user) {
-      await createUser(data.user);
-    }
-    
-    if (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: error.message,
-      });
-      throw error;
-    } else {
-      toast({
-        title: "Success",
-        description: "You have successfully signed in",
-      });
-    }
+    // Implement your own authentication logic here
+    toast({
+      title: "Not Implemented",
+      description: "Authentication has been removed. Please implement your own auth solution.",
+      variant: "destructive"
+    });
   };
 
   const signUp = async (email: string, password: string) => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password
+    // Implement your own sign up logic here
+    toast({
+      title: "Not Implemented",
+      description: "Authentication has been removed. Please implement your own auth solution.",
+      variant: "destructive"
     });
-
-    if (data.user) {
-      await createUser(data.user);
-    }
-
-    if (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: error.message,
-      });
-      throw error;
-    } else {
-      toast({
-        title: "Success",
-        description: "Sign up successful! Please login to continue.",
-      });
-    }
   };
 
   const signInWithMagicLink = async (email: string) => {
-    const { data, error } = await supabase.auth.signInWithOtp({
-      email,
-      options: {
-        shouldCreateUser: false,
-        emailRedirectTo: `${window.location.origin}/dashboard`,
-      },
+    // Implement your own magic link logic here
+    toast({
+      title: "Not Implemented",
+      description: "Authentication has been removed. Please implement your own auth solution.",
+      variant: "destructive"
     });
-    if (!error && data.user) {
-      await createUser(data.user);
-    }
-    if (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: error.message,
-      });
-      throw error;
-    } else {
-      toast({
-        title: "Success",
-        description: "Check your email for the login link",
-      });
-    }
   };
 
   const signInWithGoogle = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'google' as Provider,
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`
-      }
+    // Implement your own Google auth logic here
+    toast({
+      title: "Not Implemented",
+      description: "Authentication has been removed. Please implement your own auth solution.",
+      variant: "destructive"
     });
-    
-    if (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: error.message,
-      });
-      throw error;
-    }
   };
 
   const signOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: error.message,
-      });
-    } else {
-      toast({
-        title: "Success",
-        description: "You have successfully signed out",
-      });
-      router.push('/');
-    }
+    setUser(null);
+    router.push('/');
+    toast({
+      title: "Signed Out",
+      description: "You have been signed out successfully"
+    });
   };
 
   const resetPassword = async (email: string) => {
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/reset-password`,
+    // Implement your own password reset logic here
+    toast({
+      title: "Not Implemented",
+      description: "Authentication has been removed. Please implement your own auth solution.",
+      variant: "destructive"
     });
-    if (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: error.message,
-      });
-      throw error;
-    } else {
-      toast({
-        title: "Success",
-        description: "Check your email for the password reset link",
-      });
-    }
   };
 
   return (
     <AuthContext.Provider value={{
       user,
-      createUser,
       signIn,
       signUp,
       signInWithMagicLink,
       signInWithGoogle,
       signOut,
       resetPassword,
-      initializing,
-
+      initializing
     }}>
       {children}
     </AuthContext.Provider>

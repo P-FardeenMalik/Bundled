@@ -6,7 +6,7 @@ const Logo: React.FC = () => {
     <div className="flex items-center space-x-3">
       <div className="w-10 h-10">
         <Image 
-          src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+          src="/images/logo.jpg"
           alt="Bundled Logo"
           width={40}
           height={40}

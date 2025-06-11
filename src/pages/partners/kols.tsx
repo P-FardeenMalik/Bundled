@@ -361,7 +361,7 @@ export default function KOLs() {
               >
                 <Link href="/" className="flex items-center space-x-3">
                   <Image
-                    src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                    src="/images/logo.jpg"
                     alt="Bundled Logo"
                     width={48}
                     height={48}
@@ -642,7 +642,7 @@ export default function KOLs() {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <Link href="/" className="flex items-center space-x-3 mb-6 md:mb-0">                  <Image
-                    src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                    src="/images/logo.jpg"
                     alt="Bundled Logo"
                     width={40}
                     height={40}

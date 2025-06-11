@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Image from "next/image";
+import OptimizedImage from "@/components/OptimizedImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -84,13 +84,13 @@ export default function Partners() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 className="flex items-center space-x-3"
-              >
-                <Link href="/" className="flex items-center space-x-3">                <Image
-                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+              >                <Link href="/" className="flex items-center space-x-3">                <OptimizedImage
+                  src="/images/logo.jpg"
                   alt="Bundled Logo"
                   width={48}
                   height={48}
                   className="rounded-xl"
+                  priority
                 />
                   <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                     Bundled
@@ -329,14 +329,13 @@ export default function Partners() {
         {/* Footer */}
         <footer className="bg-gray-900/50 py-16 px-6 lg:px-8 border-t border-white/10">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <Link href="/" className="flex items-center space-x-3 mb-6 md:mb-0">
-                <Image
-                  src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+            <div className="flex flex-col md:flex-row justify-between items-center">              <Link href="/" className="flex items-center space-x-3 mb-6 md:mb-0">                <OptimizedImage
+                  src="/images/logo.jpg"
                   alt="Bundled Logo"
                   width={40}
                   height={40}
                   className="rounded-xl"
+                  priority
                 />
                 <span className="text-xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                   Bundled

@@ -4,7 +4,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  generateBuildId: () => 'build',
+  poweredByHeader: false,
+  generateBuildId: () => 'build-' + Date.now(),
   images: {
     remotePatterns: [
       {

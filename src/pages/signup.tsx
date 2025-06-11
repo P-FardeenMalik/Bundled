@@ -85,7 +85,7 @@ const SignUpPage = () => {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center space-x-3 mb-4 cursor-pointer" onClick={() => router.push("/")}>
               <Image
-                src="https://assets.co.dev/31027885-c7e9-4de0-8d87-ffffa58fc73e/logo-0535a30.jpg"
+                src="/images/logo.jpg"
                 alt="Bundled Logo"
                 width={48}
                 height={48}

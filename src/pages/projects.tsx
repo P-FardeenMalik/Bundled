@@ -194,12 +194,11 @@ export default function Projects() {
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="bg-gray-900/50 border-white/10 hover:border-yellow-400/30 transition-all duration-500 group backdrop-blur-sm h-full">
                     <CardContent className="p-6">
-                      <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
-                        <Image
+                      <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">                        <Image
                           src={project.image}
                           alt={project.name}
-                          layout="fill"
-                          objectFit="cover"
+                          fill
+                          style={{ objectFit: "cover" }}
                           className="group-hover:scale-110 transition-transform duration-500"
                         />
                       </div>
@@ -257,13 +256,12 @@ export default function Projects() {
                 <motion.div key={index} variants={fadeInUp}>
                   <Card className="bg-gray-900/50 border-white/10 hover:border-yellow-400/30 transition-all duration-500 group backdrop-blur-sm">
                     <CardContent className="p-6">
-                      <div className="relative w-full aspect-video mb-4 rounded-lg overflow-hidden">
-                        <Image
+                      <div className="relative w-full aspect-video mb-4 rounded-lg overflow-hidden">                        <Image
                           src={project.image}
                           alt={project.name}
-                          layout="fill"
-                          objectFit="contain"
-                          className="p-4 group-hover:scale-110 transition-transform duration-500"
+                          fill
+                          style={{ objectFit: "contain", padding: "1rem" }}
+                          className="group-hover:scale-110 transition-transform duration-500"
                         />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300">
