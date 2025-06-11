@@ -19,12 +19,12 @@ import {
   Zap,
   Shield,
   Target,
+  MessageCircle,
   Rocket,
   Award,
   Crown,
   Globe,
   BarChart3,
-  MessageCircle,
   Twitter,
   Youtube,
   Building2,
@@ -470,8 +470,9 @@ export default function Services() {
                 <Link href="/projects" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
                 <Link href="/#contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
                 <Link href="https://t.me/bundledhq">
-                  <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25">
-                    Get Started
+                  <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25 flex items-center gap-2">
+                    <MessageCircle className="w-5 h-5" />
+                    Join Telegram
                   </Button>
                 </Link>
               </div>
@@ -503,8 +504,9 @@ export default function Services() {
                 <Link href="/about" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
                 <Link href="/projects" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
                 <Link href="/#contact" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
-                <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold rounded-full shadow-lg">
-                  Get Started
+                <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold rounded-full shadow-lg flex items-center justify-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  Join Telegram
                 </Button>
               </div>
             </motion.div>

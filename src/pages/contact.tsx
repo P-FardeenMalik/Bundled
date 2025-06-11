@@ -36,6 +36,14 @@ const staggerContainer = {
 
 const contactMethods = [
   {
+    icon: <MessageCircle className="w-8 h-8" />,
+    title: "Telegram (Verified)",
+    description: "Join our official Telegram channel for updates and direct support",
+    contact: "@bundledhq",
+    action: "https://t.me/bundledhq",
+    verified: true
+  },
+  {
     icon: <Mail className="w-8 h-8" />,
     title: "Email Us",
     description: "Get in touch via email for detailed inquiries",
@@ -172,14 +180,24 @@ Message: ${formData.message}
               Let's discuss how Bundled can help your crypto project reach new heights. Our team of experts is ready to craft a custom marketing strategy for your success.
             </p>
 
-            {/* CTA Button */}
-            <Button 
-              size="lg" 
-              className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-              onClick={() => window.open('https://t.me/Mrdaniel91', '_blank')}
-            >
-              Contact Us Now
-            </Button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                onClick={() => window.open('https://t.me/bundledhq', '_blank')}
+              >
+                <MessageCircle className="w-5 h-5" />
+                Join our Telegram
+              </Button>
+              <Button 
+                size="lg" 
+                className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+                onClick={() => window.open('https://t.me/Mrdaniel91', '_blank')}
+              >
+                Contact Us Now
+              </Button>
+            </div>
           </motion.div>
         </section>
 
@@ -215,9 +233,16 @@ Message: ${formData.message}
                       <div className="p-4 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-2xl text-yellow-400 inline-flex mb-6 group-hover:scale-110 transition-transform duration-300">
                         {method.icon}
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
-                        {method.title}
-                      </h3>
+                      <div className="flex items-center justify-center gap-2 mb-4">
+                        <h3 className="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors duration-300">
+                          {method.title}
+                        </h3>
+                        {method.verified && (
+                          <Badge className="bg-blue-500/20 text-blue-400 border-blue-500/20">
+                            ✓ Verified
+                          </Badge>
+                        )}
+                      </div>
                       <p className="text-gray-300 mb-4 leading-relaxed">
                         {method.description}
                       </p>

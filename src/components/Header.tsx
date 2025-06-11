@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { AuthContext } from '@/contexts/AuthContext';
 import Logo from '@/components/Logo';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 
 const Header = () => {
   const router = useRouter();
@@ -58,9 +58,10 @@ const Header = () => {
             
             <Button 
               onClick={handleGetStartedClick}
-              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25"
+              className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25 flex items-center gap-2"
             >
-              Get Started
+              <MessageCircle className="w-5 h-5" />
+              Join Telegram
             </Button>
           </div>
 
@@ -98,6 +99,13 @@ const Header = () => {
             <Link href="/contact" className={`block text-gray-400 hover:text-yellow-500 transition-colors duration-300 font-medium ${router.pathname === '/contact' ? 'text-yellow-500' : ''}`}>
               Contact
             </Link>
+            <Button 
+              onClick={handleGetStartedClick}
+              className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold rounded-full flex items-center justify-center gap-2 shadow-lg"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Join Telegram
+            </Button>
             
             <Button 
               onClick={handleGetStartedClick}

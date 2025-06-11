@@ -19,7 +19,8 @@ import {
   BarChart3,
   Activity,
   DollarSign,
-  Zap
+  Zap,
+  MessageCircle
 } from "lucide-react";
 
 const fadeInUp = {
@@ -201,6 +202,53 @@ const tierInfo = {
 export default function MMTeam() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
+  const DesktopButtons = () => (
+    <div className="hidden md:flex items-center gap-4">
+      <Button asChild variant="ghost">
+        <Link href="/contact">
+          Contact Us
+        </Link>
+      </Button>
+      <Button asChild>
+        <Link href="https://t.me/bundledhq" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+          <MessageCircle className="w-5 h-5" />
+          Join Telegram
+        </Link>
+      </Button>
+    </div>
+  );
+
+  const MobileButtons = () => {
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    return (
+      <div className="md:hidden">
+        <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </Button>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="absolute top-16 right-4 bg-background border rounded-lg shadow-lg p-4 flex flex-col gap-2 min-w-[200px]"
+          >
+            <Button asChild variant="ghost" className="justify-start">
+              <Link href="/contact">
+                Contact Us
+              </Link>
+            </Button>
+            <Button asChild className="justify-start">
+              <Link href="https://t.me/bundledhq" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <MessageCircle className="w-5 h-5" />
+                Join Telegram
+              </Link>
+            </Button>
+          </motion.div>
+        )}
+      </div>
+    );
+  };
+
   const renderMMGrid = (teams: any[]) => (
     <motion.div
       variants={staggerContainer}
@@ -303,9 +351,10 @@ export default function MMTeam() {
                 <Link href="/about" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
                 <Link href="/projects" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
                 <Link href="/contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
-                <Link href="https://t.me/bundledhq">
-                  <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25">
-                    Get Started
+                <Link href="https://t.me/bundledhq" target="_blank" rel="noopener noreferrer">
+                  <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25 flex items-center gap-2">
+                    <MessageCircle className="w-5 h-5" />
+                    Join Telegram
                   </Button>
                 </Link>
               </div>
@@ -337,9 +386,10 @@ export default function MMTeam() {
                 <Link href="/about" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
                 <Link href="/projects" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
                 <Link href="/contact" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
-                <Link href="/signup">
-                  <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold rounded-full shadow-lg">
-                    Get Started
+                <Link href="https://t.me/bundledhq" target="_blank" rel="noopener noreferrer">
+                  <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold rounded-full shadow-lg flex items-center justify-center gap-2">
+                    <MessageCircle className="w-5 h-5" />
+                    Join Telegram
                   </Button>
                 </Link>
               </div>
