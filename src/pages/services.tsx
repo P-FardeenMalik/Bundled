@@ -470,7 +470,7 @@ export default function Services() {
                 <Link href="/services" className="text-yellow-400 font-medium">Services</Link>
                 <Link href="/partners" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Partners</Link>
                 <Link href="/about" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
-                <Link href="/Projects" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
+                <Link href="/projects" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
                 <Link href="/#contact" className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
                 <Link href="https://t.me/bundledhq">
                   <Button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/25">
@@ -504,7 +504,7 @@ export default function Services() {
                 <Link href="/services" className="block text-yellow-400 font-medium">Services</Link>
                 <Link href="/partners" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Partners</Link>
                 <Link href="/about" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">About</Link>
-                <Link href="/Projects" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
+                <Link href="/projects" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Projects</Link>
                 <Link href="/#contact" className="block text-gray-300 hover:text-yellow-400 transition-colors duration-300 font-medium">Contact</Link>
                 <Button className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-black font-bold rounded-full shadow-lg">
                   Get Started
@@ -663,11 +663,17 @@ export default function Services() {
 
                       {/* Choose Package Button */}
                       <div className="flex justify-center w-full">
-                        <Button 
-                          className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black border-none transition-all duration-300 font-bold text-sm shadow-lg hover:shadow-yellow-500/25 rounded-full px-8 py-2.5 transform hover:scale-105"
+                        <a
+                          href="https://t.me/Mrdaniel91"
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          Choose Package
-                        </Button>
+                          <Button 
+                            className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black border-none transition-all duration-300 font-bold text-sm shadow-lg hover:shadow-yellow-500/25 rounded-full px-8 py-2.5 transform hover:scale-105"
+                          >
+                            Choose Package
+                          </Button>
+                        </a>
                       </div>
                     </CardContent>
                   </Card>
@@ -689,7 +695,7 @@ export default function Services() {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
-              {/* <Badge className="text-yellow-500 border-yellow-500/20 px-4 py-2 text-sm font-medium hover:text-yellow-400 transition-colors duration-300">
+              {/* <Badge className="text-yellow-500 border-yellow-500/20 mb-6 hover:text-yellow-400 transition-colors duration-300">
                 Services
               </Badge> */}
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
