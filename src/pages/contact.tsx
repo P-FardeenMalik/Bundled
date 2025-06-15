@@ -111,6 +111,8 @@ export default function Contact() {
     message: "",
     timeline: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{type: 'success' | 'error', message: string} | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -119,24 +121,46 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    
-    // Create email content
-    const subject = `New Contact Form Submission from ${formData.name}`;
-    const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-Project Type: ${formData.project}
-Budget Range: ${formData.budget}
-Timeline: ${formData.timeline}
-Message: ${formData.message}
-    `.trim();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
 
-    // Open email client with form data
-    window.location.href = `mailto:contact@bundled.finance?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.',
+        });
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          project: '',
+          budget: '',
+          message: '',
+          timeline: ''
+        });
+      } else {
+        const error = await response.json();
+        throw new Error(error.message || 'Something went wrong');
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to send message. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -409,14 +433,21 @@ Message: ${formData.message}
                         className="bg-black/50 border-white/20 text-white min-h-[150px] rounded-xl focus:border-yellow-400 transition-colors resize-none"
                         placeholder="Tell us about your project, goals, and how we can help..."
                         required
-                      />
-                    </div>
+                      />                    </div>
+
+                    {/* Status message */}
+                    {submitStatus && (
+                      <div className={`text-sm ${submitStatus.type === 'success' ? 'text-green-400' : 'text-red-400'} mb-4 p-4 rounded-xl ${submitStatus.type === 'success' ? 'bg-green-400/10 border border-green-400/20' : 'bg-red-400/10 border border-red-400/20'}`}>
+                        {submitStatus.message}
+                      </div>
+                    )}
 
                     <Button
                       type="submit"
-                      className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium rounded-full w-full"
+                      disabled={isSubmitting}
+                      className="bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-500 border border-yellow-500/20 font-medium rounded-full w-full disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
                     >
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </form>
